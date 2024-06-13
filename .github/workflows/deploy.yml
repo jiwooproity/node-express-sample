@@ -25,7 +25,7 @@ jobs:
 
       - name: 테스트4 GitHub Actions Secret
         run: |
-          echo ${{ secrets.MY_SECRET }}
+          echo ${{ secrets.MY_SECRETS }}
 
   node_job:
     runs-on: ubuntu-latest
