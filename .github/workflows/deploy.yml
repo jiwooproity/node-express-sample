@@ -3,20 +3,24 @@ name: GitHub Actions Workflows
 on:
   push:
     branches:
-      - main
+      - main # 메인 브랜치 push 이벤트 감지, jobs 실행
 
 jobs:
-  deploy_job:
+  deploy_job: # 1개 이상의 job을 가질 수 있고 각각의 job id를 지정
+    runs-on: ubuntu-latest
+
+    steps: # Job 안에서 특정 작업을 수행하는 가장 작은 단위
+      - name: 테스트
+        run: echo "This is test"
+
+  node_job:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: 테스트
-        run: echo "This is test"
+          node-version: 20 # node@20 을 사용하기 위한 node 환경 설치
 
       - name: 테스트2
         run: npm run test
