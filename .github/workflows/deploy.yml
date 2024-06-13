@@ -1,0 +1,14 @@
+name: GitHub Actions Workflows
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 테스트
+        run: echo "This is test"
