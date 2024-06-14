@@ -1,9 +1,9 @@
 name: GitHub Actions Workflows
 
 on:
-  push:
+  push: # 메인 브랜치 push 이벤트 감지, jobs 실행
     branches:
-      - main # 메인 브랜치 push 이벤트 감지, jobs 실행
+      - main
 
 jobs:
   deploy_job: # 1개 이상의 job을 가질 수 있고 각각의 job id를 지정
