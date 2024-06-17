@@ -2,11 +2,13 @@ import dotenv from "dotenv";
 import express from "express";
 import root from "./router/root.js";
 import movie from "./router/movie.js";
+import cors from "cors";
 
 dotenv.config();
 
 const PORT = 8080;
 const app = express();
+app.use(cors());
 
 app.use("/", root);
 app.use("/movie", movie);
